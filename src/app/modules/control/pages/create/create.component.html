@@ -1,0 +1,44 @@
+<mat-card class="form-card mat-elevation-z2">
+  <mat-card-header>
+    <mat-card-title>Nuevo Control</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="form-container">
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker"  placeholder="Hora"/>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" placeholder="Peso"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" placeholder="BMI"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" placeholder="Body Fat"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" placeholder="Músculo"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" placeholder="Kcal"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" placeholder="Edad"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" placeholder="Visceral Fat"/>
+      </mat-form-field>
+
+    </div>
+  </mat-card-content>
+</mat-card>

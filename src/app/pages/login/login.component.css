@@ -1,0 +1,12 @@
+.login-card {
+  width:50%;
+  margin: auto;
+  margin-bottom: 32px;
+}
+
+.btn-google {
+  width: 100%;
+  background: #dd4b39;
+  color: white;
+  font-weight: bold;
+}

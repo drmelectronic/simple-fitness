@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "simple-fitness-b03fe": {
+      "hosting": {
+        "simple-fitness": [
+          "simple-fitness-b03fe"
+        ]
+      }
+    }
+  }
+}
