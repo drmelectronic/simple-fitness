@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,12 +8,25 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(public afAuth: AngularFireAuth) {}
+  constructor(public authService: AuthService) {
+  }
+
+  public isLogged = false;
+  public user;
 
   ngOnInit() {
   }
 
-  onLogout() {
+  signOut() {
+    this.authService.signOut();
+  }
 
+  onCheckUser(): void {
+    this.user = this.authService.getCurrentUser()
+    if (this.user == null) {
+      this.isLogged = false;
+    } else {
+      this.isLogged = true;
+    }
   }
 }

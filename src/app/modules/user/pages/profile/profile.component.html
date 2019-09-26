@@ -1,0 +1,41 @@
+<div *ngIf="auth.user$ | async; then authenticated else guest">
+  <!-- template will replace this div -->
+</div>
+
+<!-- User NOT logged in -->
+<ng-template #guest>
+</ng-template>
+
+
+<!-- User logged in -->
+<ng-template #authenticated>
+  <mat-card class="login-card mat-elevation-z2">
+    <mat-card-content *ngIf="auth.user$ | async as user">
+      <mat-grid-list cols="3">
+        <mat-grid-tile colspan="1">
+          <img [src]="user.photoURL" class="img-rounded"></mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <mat-list>
+            <mat-list-item class="userName">{{ user.displayName }}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <mat-button-toggle-group
+                name="nav" aria-label="Navigator">
+                <mat-button-toggle value="history"
+                                   (change)="onToggled($event.value)"><mat-icon>table</mat-icon>Historia</mat-button-toggle>
+                <mat-button-toggle value="add"
+                                   (change)="onToggled($event.value)"><mat-icon>add</mat-icon>Agregar</mat-button-toggle>
+              </mat-button-toggle-group>
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
+<!--  <div *ngIf="auth.user$ | async as user">-->
+<!--    <h3>Howdy, {{ user.displayName }}</h3>-->
+<!--    <img  [src]="user.photoURL">-->
+<!--    <p>UID: {{ user.uid }}</p>-->
+<!--    <button (click)="auth.signOut()">Logout</button>-->
+<!--  </div>-->
+</ng-template>

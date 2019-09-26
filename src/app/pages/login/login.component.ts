@@ -14,10 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private afsAuth: AngularFireAuth) { }
 
   ngOnInit() {
-  }
-
-  getCurrentUser() {
-    this.authService.isAuth().subscribe(auth => {
+    this.authService.user$.subscribe(auth => {
       if (auth) {
         console.log('user logged');
         this.isLogged = true;
@@ -28,7 +25,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onLoginGoogle() {
 
+  onLoginGoogle() {
+    this.authService.googleSignin();
   }
 }

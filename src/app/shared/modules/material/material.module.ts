@@ -6,8 +6,12 @@ import {
   MatFormFieldModule,
   MatToolbarModule,
   MatIconModule,
-  MatMenuModule
+  MatMenuModule,
+  MatTableModule,
+  MatNativeDateModule,
+  MatInputModule, MatGridListModule, MatButtonModule, MatButtonToggleModule, MatListModule
 } from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -17,7 +21,16 @@ import {
     MatFormFieldModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatListModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   imports: [
     CommonModule,
@@ -26,7 +39,16 @@ import {
     MatFormFieldModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatListModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MaterialModule { }

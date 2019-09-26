@@ -6,7 +6,6 @@ import localePe from '@angular/common/locales/es-PE';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
-import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireAuth} from '@angular/fire/auth';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +17,7 @@ import {PagesModule} from './pages/pages.module';
 import {ModulesModule} from './modules/modules.module';
 import {SharedModule} from './shared/shared.module';
 import {MaterialModule} from './shared/modules/material/material.module';
+import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
 
 
 registerLocaleData(localePe, 'pe');
@@ -34,12 +34,12 @@ registerLocaleData(localePe, 'pe');
     BrowserAnimationsModule,
     ModulesModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
+    AngularFirestoreModule,
     PagesModule,
     SharedModule,
     MaterialModule
   ],
-  providers: [AngularFireAuth],
+  providers: [AngularFireAuth, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

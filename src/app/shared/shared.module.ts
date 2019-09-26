@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import {MaterialModule} from './modules/material/material.module';
+import {ModulesModule} from '../modules/modules.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {MaterialModule} from './modules/material/material.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ModulesModule
   ]
 })
 export class SharedModule { }

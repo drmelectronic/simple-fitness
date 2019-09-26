@@ -1,3 +1,3 @@
-<p>
-  home works!
-</p>
+<app-profile (toggleNavigator)="navigate($event)"></app-profile>
+<app-list [hidden]="navigator!='history'"></app-list>
+<app-create [hidden]="navigator!='add'"></app-create>

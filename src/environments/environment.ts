@@ -23,3 +23,43 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+// rules_version = '2';
+// service cloud.firestore {
+//   match /databases/{database}/documents {
+//   match /users/{userId} {
+//     allow write, read: if isOwner(userId);
+//   }
+//   function isOwner(userId) {
+//     return request.auth.uid == userId
+//   }
+// }
+// }
+
+// Allow read/write access to all users under any conditions
+// Warning: **NEVER** use this rule set in production; it allows
+// anyone to overwrite your entire database.
+// service cloud.firestore {
+//   match /databases/{database}/documents {
+//   match /{document=**} {
+//     allow read, write: if true;
+//   }
+// }
+// }
+
+// rules_version = '2';
+// service cloud.firestore {
+//   match /databases/{database}/documents {
+//   match /users/{userId} {
+//     allow write, read: if isOwner(userId);
+//
+//     match /controles {
+//       allow write, read: if isOwner(userId);
+//     }
+//   }
+// }
+// function isOwner(userId) {
+//   return request.auth.uid == userId
+// }
+// }

@@ -7,6 +7,10 @@ import { CreateComponent } from './pages/create/create.component';
 
 @NgModule({
   declarations: [ListComponent, CreateComponent],
+  exports: [
+    ListComponent,
+    CreateComponent
+  ],
   imports: [
     CommonModule,
     ControlRoutingModule,

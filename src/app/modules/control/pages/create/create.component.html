@@ -1,44 +1,61 @@
 <mat-card class="form-card mat-elevation-z2">
-  <mat-card-header>
-    <mat-card-title>Nuevo Control</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <div class="form-container">
+  <form [formGroup]="controlForm" autocomplete="off"
+        (ngSubmit)="createControl()">
 
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker"  placeholder="Hora"/>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+    <mat-card-header>
+      <mat-card-title>Nuevo Control</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="form-container">
 
-      <mat-form-field>
-        <input matInput type="number" placeholder="Peso"/>
-      </mat-form-field>
+        <mat-form-field>
+          <input formControlName="time"
+            matInput type="datetime-local"/>
+        </mat-form-field>
 
-      <mat-form-field>
-        <input matInput type="number" placeholder="BMI"/>
-      </mat-form-field>
+        <mat-form-field>
+          <input formControlName="weight"
+          matInput type="number" placeholder="Peso"/>
+        </mat-form-field>
 
-      <mat-form-field>
-        <input matInput type="number" placeholder="Body Fat"/>
-      </mat-form-field>
+        <mat-form-field>
+          <input formControlName="bmi"
+                 matInput type="number" placeholder="BMI"/>
+        </mat-form-field>
 
-      <mat-form-field>
-        <input matInput type="number" placeholder="Músculo"/>
-      </mat-form-field>
+        <mat-form-field>
+          <input formControlName="bodyFat"
+                 matInput type="number" placeholder="Body Fat"/>
+        </mat-form-field>
 
-      <mat-form-field>
-        <input matInput type="number" placeholder="Kcal"/>
-      </mat-form-field>
+        <mat-form-field>
+          <input formControlName="muscle"
+                 matInput type="number" placeholder="Músculo"/>
+        </mat-form-field>
 
-      <mat-form-field>
-        <input matInput type="number" placeholder="Edad"/>
-      </mat-form-field>
+        <mat-form-field>
+          <input formControlName="calories"
+                 matInput type="number" placeholder="Kcal"/>
+        </mat-form-field>
 
-      <mat-form-field>
-        <input matInput type="number" placeholder="Visceral Fat"/>
-      </mat-form-field>
+        <mat-form-field>
+          <input formControlName="age"
+                 matInput type="number" placeholder="Edad"/>
+        </mat-form-field>
 
-    </div>
-  </mat-card-content>
+        <mat-form-field>
+          <input formControlName="visceralFat"
+                 matInput type="number" placeholder="Visceral Fat"/>
+        </mat-form-field>
+
+      </div>
+    </mat-card-content>
+
+    <mat-card-footer>
+      <button mat-raised-button color="primary"
+      class="button-submit">Guardar</button>
+    </mat-card-footer>
+
+  </form>
+
 </mat-card>
